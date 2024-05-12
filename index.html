@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Background</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #video-background {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      filter: brightness(30%);
+    }
+    #content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <video id="video-background" autoplay loop muted>
+    <source src="./images/3129671-uhd_3840_2160_30fps.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="content">
+    <!-- Content from the landing page will be inserted here -->
+  </div>
+
+  <script>
+    // Define the content from the landing page
+    const landingPageContent = `
+      <h1>Welcome to Our Landing Page</h1>
+      <p>This is some sample content from the landing page.</p>
+      <p>You can add more content here as needed.</p>
+    `;
+    
+    // Insert the content into the #content div
+    document.getElementById('content').innerHTML = landingPageContent;
+  </script>
+</body>
+</html>
